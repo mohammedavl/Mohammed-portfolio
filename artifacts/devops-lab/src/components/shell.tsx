@@ -6,7 +6,7 @@ import { LABS } from '@/labs/registry';
 export function Shell({ children }: { children: ReactNode }) {
   const [loc] = useLocation();
   const { completed } = useProgress();
-  const nav = [['/', 'Labs'], ['/about', 'About']] as const;
+  const nav = [['/', 'Labs'], ['/game', 'Play'], ['/about', 'About']] as const;
   return (
     <div className="min-h-[100dvh]">
       <header className="sticky top-0 z-40 border-b border-foreground/80 bg-background/90 backdrop-blur">

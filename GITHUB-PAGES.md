@@ -24,6 +24,6 @@ node scripts/build-github-pages.mjs /Mohammed-portfolio/
 
 The output is `artifacts/devops-lab/dist/public`. Only that static directory is hosted: no backend, database, cloud credentials, or API keys are needed.
 
-The script builds assets with the repository path and exports a real HTML entry for home, about, and each of the 15 labs, so refreshing or directly opening a project works on GitHub Pages without server rewrites.
+The script builds assets with the repository path and exports a real HTML entry for home, about, the game, and each of the 15 labs, so refreshing or directly opening a project works on GitHub Pages without server rewrites.
 
 The Replit preview continues to use its existing root path. For a custom domain or user-site repository, use `/` as the build base; the workflow obtains this from GitHub Pages automatically.

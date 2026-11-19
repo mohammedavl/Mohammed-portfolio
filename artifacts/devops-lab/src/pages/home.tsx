@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react';
 import { Link } from 'wouter';
-import { Search, Bookmark, CheckCircle2, ArrowUpRight } from 'lucide-react';
+import { Search, Bookmark, CheckCircle2, ArrowUpRight, ArrowRight } from 'lucide-react';
 import { LABS, ALL_TECH } from '@/labs/registry';
 import { useProgress, usePageMeta } from '@/lib/lab-store';
 import { Pill } from '@/components/lab-kit';
@@ -44,6 +44,17 @@ export default function Home() {
             <div className="mt-2 opacity-50">progress stored in localStorage<span className="blink">_</span></div>
           </div>
         </div>
+      </section>
+
+      <section className="border-b border-foreground/80 bg-secondary text-secondary-foreground">
+        <Link href="/game" data-testid="link-play-game" className="group mx-auto flex max-w-7xl flex-col gap-3 px-4 py-6 md:flex-row md:items-center md:gap-8 md:px-8">
+          <span className="flex items-center gap-2 font-mono text-[11px] uppercase tracking-wider text-primary"><span className="ping-dot h-2 w-2 bg-primary" />pager: 9 open incidents</span>
+          <span className="flex-1">
+            <span className="block font-display text-2xl font-extrabold tracking-tight md:text-3xl">Rather play? Take the on-call pager.</span>
+            <span className="block text-sm opacity-70">Incident Commander: an untimed, fictional outage game. Every decision leads to one of these fifteen labs.</span>
+          </span>
+          <span className="btn btn-primary self-start !px-5 !py-2.5 md:self-auto">Play the game <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" aria-hidden /></span>
+        </Link>
       </section>
 
       <section className="mx-auto max-w-7xl px-4 py-10 md:px-8">

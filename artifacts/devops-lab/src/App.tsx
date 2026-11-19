@@ -7,6 +7,7 @@ import NotFound from '@/pages/not-found';
 import Home from '@/pages/home';
 import Project from '@/pages/project';
 import About from '@/pages/about';
+import Game from '@/pages/game';
 import { Shell } from '@/components/shell';
 import { Route, Switch, useLocation, Router as WouterRouter } from 'wouter';
 
@@ -22,6 +23,7 @@ function Router() {
           <Route path="/" component={Home} />
           <Route path="/projects/:slug" component={Project} />
           <Route path="/about" component={About} />
+          <Route path="/game" component={Game} />
           <Route component={NotFound} />
         </Switch>
       </RoutedErrorBoundary>

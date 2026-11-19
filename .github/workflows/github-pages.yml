@@ -1,0 +1,51 @@
+name: Publish DevOps portfolio to GitHub Pages
+
+# Manual publishing only: pushing source does not make it public automatically.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10.26.1
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm run typecheck:libs
+      - run: pnpm --filter @workspace/devops-lab run typecheck
+      - uses: actions/configure-pages@v5
+        id: pages
+      - name: Build static site with working deep links
+        env:
+          PAGES_BASE: ${{ steps.pages.outputs.base_path }}
+        run: node scripts/build-github-pages.mjs "${PAGES_BASE%/}/"
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: artifacts/devops-lab/dist/public
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Publish
+        id: deployment
+        uses: actions/deploy-pages@v4

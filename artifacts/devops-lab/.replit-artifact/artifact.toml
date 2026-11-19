@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "DevOps Engineering Lab"
+description = "A public engineering portfolio with 15 interactive AWS, Kubernetes, OpenShift, infrastructure, and platform engineering projects. Browser-based labs, calculators and downloadable configuration examples."
+version = "1.0.0"
+id = "artifacts/devops-lab"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 24094
+
+[services.development]
+run = "pnpm --filter @workspace/devops-lab run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/devops-lab", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/devops-lab/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "24094"
+BASE_PATH = "/"

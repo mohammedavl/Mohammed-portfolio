@@ -12,13 +12,13 @@ const SKILLS: [string, string][] = [
 ];
 
 export default function About() {
-  usePageMeta('About - DevOps Engineering Lab', 'Scope, skills demonstrated and honest limitations of the DevOps Engineering Lab portfolio.');
+  usePageMeta('About Mohammed - DevOps Engineering Lab', 'Meet Mohammed and explore the hands-on DevOps projects in his engineering portfolio.');
   return (
     <div className="mx-auto max-w-5xl px-4 py-14 md:px-8 md:py-20">
-      <p className="lab-label rise">About this lab</p>
-      <h1 className="rise mt-3 font-display text-5xl font-extrabold leading-[0.95] tracking-[-0.03em] md:text-6xl">Claims are cheap.<br /><span className="text-primary">Inputs and outputs aren't.</span></h1>
+      <p className="lab-label rise">About Mohammed</p>
+      <h1 className="rise mt-3 font-display text-5xl font-extrabold leading-[0.95] tracking-[-0.03em] md:text-6xl">I build and explore<br /><span className="text-primary">DevOps systems.</span></h1>
       <p className="mt-6 max-w-2xl text-lg text-muted-foreground">
-        This portfolio exists so a technical interviewer can test reasoning instead of reading adjectives. Each of the {LABS.length} labs takes real input, computes a result with visible logic, and produces a file you can take away and inspect.
+        I’m Mohammed, an aspiring DevOps and platform engineer. This portfolio gives you something concrete to explore: {LABS.length} interactive projects covering cloud infrastructure, Kubernetes, delivery, reliability, security, and platform engineering. Try the tools, inspect how they work, and see how I approach engineering problems.
       </p>
 
       <section className="mt-10 grid items-center gap-6 border border-foreground bg-card p-5 shadow-[4px_4px_0_hsl(var(--accent))] sm:grid-cols-[180px_1fr] sm:p-7">
@@ -49,15 +49,16 @@ export default function About() {
           <h2 className="font-display text-2xl font-bold">What is real</h2>
           <ul className="mt-3 space-y-2 text-sm">
             <li>- Calculators (SLO, cost, DR) compute exact results from your inputs.</li>
-            <li>- Generators (CloudFormation, OpenShift, RBAC, Backstage) emit valid, downloadable configuration.</li>
-            <li>- The RBAC evaluator and log triage rules are working logic you can read in the downloads.</li>
-            <li>- The developer portal stores entries in your browser's localStorage.</li>
+            <li>- The SLO and recovery calculators compute results from your inputs; the cost estimate uses illustrative rates.</li>
+            <li>- Configuration tools generate downloadable examples you can inspect and adapt; validate them in your target environment before use.</li>
+            <li>- The RBAC evaluator and rule-based log triage run actual logic you can inspect.</li>
+            <li>- The developer portal lets you create and manage service entries in your browser.</li>
           </ul>
         </div>
         <div className="border border-foreground bg-card p-6 shadow-[4px_4px_0_hsl(var(--destructive))]">
           <h2 className="font-display text-2xl font-bold">What is simulated</h2>
           <ul className="mt-3 space-y-2 text-sm">
-            <li>- No AWS, Kubernetes, OpenShift or CI system is contacted. Nothing is deployed.</li>
+            <li>- These browser demos don’t connect to AWS, Kubernetes, OpenShift, or a CI system; they don’t deploy infrastructure.</li>
             <li>- Cluster output, telemetry and vulnerability findings are labelled fixtures.</li>
             <li>- Incident triage is regular-expression rules, not AI.</li>
             <li>- Cost rates are illustrative, not published provider prices.</li>

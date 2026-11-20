@@ -21,6 +21,19 @@ export default function About() {
         This portfolio exists so a technical interviewer can test reasoning instead of reading adjectives. Each of the {LABS.length} labs takes real input, computes a result with visible logic, and produces a file you can take away and inspect.
       </p>
 
+      <section className="mt-10 grid items-center gap-6 border border-foreground bg-card p-5 shadow-[4px_4px_0_hsl(var(--accent))] sm:grid-cols-[180px_1fr] sm:p-7">
+        <img src={`${import.meta.env.BASE_URL}mohammed-profile.png`} alt="Mohammed" className="mx-auto aspect-square w-40 border-2 border-foreground object-cover sm:w-full" />
+        <div>
+          <p className="lab-label">Portfolio owner</p>
+          <h2 className="mt-2 font-display text-3xl font-extrabold">Mohammed</h2>
+          <p className="mt-2 text-sm text-muted-foreground">DevOps · Infrastructure · Platform Engineering</p>
+          <div className="mt-5 flex flex-wrap gap-3">
+            <a className="btn btn-primary" href="tel:6362513206">Call 6362513206</a>
+            <a className="btn btn-ghost" href="mailto:mohammeddahudd@gmail.com">mohammeddahudd@gmail.com</a>
+          </div>
+        </div>
+      </section>
+
       <section className="mt-14">
         <h2 className="lab-label mb-4">Skills each lab exercises</h2>
         <div className="divide-y divide-border border-y border-foreground/80">

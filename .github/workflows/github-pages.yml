@@ -1,7 +1,9 @@
 name: Publish DevOps portfolio to GitHub Pages
 
-# Manual publishing only: pushing source does not make it public automatically.
+# Publish the portfolio when changes land on main, or on demand.
 on:
+  push:
+    branches: [main]
   workflow_dispatch:
 
 permissions:

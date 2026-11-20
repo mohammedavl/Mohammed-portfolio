@@ -2,16 +2,16 @@
 
 Target repository: https://github.com/mohammedavl/Mohammed-portfolio
 
-These files prepare deployment; they do not upload or publish the repository.
+The repository publishes automatically when updates land on `main`; you can also launch a deployment manually.
 
 ## Publish from source
 
 1. Upload the project source to the target repository, preserving its directory structure. Include the root package files, pnpm lockfile and workspace file, TypeScript configs, `artifacts/devops-lab`, shared `lib` packages, `scripts/build-github-pages.mjs`, and `.github/workflows/github-pages.yml`. Exclude secrets, `.env` files, `.local`, `.agents`, `node_modules`, and build outputs.
 2. In the repository, open **Settings → Pages → Build and deployment → Source** and select **GitHub Actions**.
-3. Open **Actions → Publish DevOps portfolio to GitHub Pages → Run workflow**.
+3. Pushing portfolio changes to `main` starts the publishing workflow automatically. To publish manually, open **Actions → Publish DevOps portfolio to GitHub Pages → Run workflow**.
 4. After the job succeeds, use the deployed URL shown in the workflow or Pages settings.
 
-The workflow runs manually. Later source changes require another **Run workflow** to publish.
+Once enabled, future changes to `main` automatically publish after the workflow succeeds.
 
 ## Local Pages build
 

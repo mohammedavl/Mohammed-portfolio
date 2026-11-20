@@ -23,7 +23,7 @@ if (slugs.length !== 15 || new Set(slugs).size !== 15) {
   throw new Error('Expected 15 unique lab routes; update the route export before publishing.');
 }
 // GitHub Pages has no SPA rewrites. Give each supported deep link a real file.
-for (const route of ['about', 'game', ...slugs.map((slug) => `projects/${slug}`)]) {
+for (const route of ['about', 'game', 'race', ...slugs.map((slug) => `projects/${slug}`)]) {
   const dir = path.join(output, route);
   await mkdir(dir, { recursive: true });
   await writeFile(path.join(dir, 'index.html'), html);
@@ -31,4 +31,4 @@ for (const route of ['about', 'game', ...slugs.map((slug) => `projects/${slug}`)
 await writeFile(path.join(output, '404.html'), html);
 await writeFile(path.join(output, '.nojekyll'), '');
 if (!html.includes(`${base}assets/`)) throw new Error('Build assets do not use the requested Pages base path.');
-console.log(`GitHub Pages build ready: ${output}; base ${base}; 15 lab routes plus home, about and game.`);
+console.log(`GitHub Pages build ready: ${output}; base ${base}; 15 lab routes plus home, about, game and race.`);

@@ -46,6 +46,17 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="border-b border-foreground/80 bg-primary text-primary-foreground">
+        <Link href="/race" data-testid="link-play-race" className="group mx-auto flex max-w-7xl flex-col gap-3 px-4 py-6 md:flex-row md:items-center md:gap-8 md:px-8">
+          <span className="font-mono text-[11px] uppercase tracking-wider">new / arcade</span>
+          <span className="flex-1">
+            <span className="block font-display text-2xl font-extrabold tracking-tight md:text-3xl">Or take the fast lane: Pipeline Run.</span>
+            <span className="block text-sm opacity-80">A 3-lane arcade drive. Dodge traffic, grab tool tokens, and unlock the labs on the way to the deploy line.</span>
+          </span>
+          <span className="btn btn-ink self-start !px-5 !py-2.5 md:self-auto">Start driving <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" aria-hidden /></span>
+        </Link>
+      </section>
+
       <section className="border-b border-foreground/80 bg-secondary text-secondary-foreground">
         <Link href="/game" data-testid="link-play-game" className="group mx-auto flex max-w-7xl flex-col gap-3 px-4 py-6 md:flex-row md:items-center md:gap-8 md:px-8">
           <span className="flex items-center gap-2 font-mono text-[11px] uppercase tracking-wider text-primary"><span className="ping-dot h-2 w-2 bg-primary" />pager: 9 open incidents</span>
